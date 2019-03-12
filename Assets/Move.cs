@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Move : MonoBehaviour {
 
@@ -10,17 +11,26 @@ public class Move : MonoBehaviour {
 	Rigidbody2D rb;
     public Animator anim;
     public GameObject characterImage;
-  
-  
+    private IEnumerator coroutine;
+    public Renderer rend;
+    public bool canDamaged;
+    public Text lifesText;
+    public int lifes;
 
-	void Start () {
+
+    void Start () {
 		rb = GetComponent <Rigidbody2D> ();
-	}
+        canDamaged = true;
+        
+    }
 		
 	void FixedUpdate () {
-		float x = Input.GetAxis ("Horizontal");
+
+        lifesText.text = "Lifes: " + lifes;
+        float x = Input.GetAxis ("Horizontal");
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin.transform.position, Vector2.down, rayCheckDistance);
-        if (Input.GetButton ("CrossButton") && hit.collider != null) {
+        if (Input.GetButton ("CrossButton") && hit.collider != null || Input.GetButton("Jump") && hit.collider != null)
+        {
 
             rb.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
 
@@ -60,4 +70,45 @@ public class Move : MonoBehaviour {
         }
 
 	}
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Enemy" && canDamaged == true)
+        {
+            StartCoroutine(damage());
+            lifes--;
+        }
+    }
+
+    public IEnumerator damage()
+    {
+        canDamaged = false;
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 255, 255, 1);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 239, 239, 255);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 255, 255, 1);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 239, 239, 255);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 255, 255, 1);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 239, 239, 255);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 255, 255, 1);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 239, 239, 255);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 255, 255, 1);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 239, 239, 255);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 255, 255, 1);
+        yield return new WaitForSeconds(.1f);
+        rend.material.color = new Color32(255, 239, 239, 255);
+        canDamaged = true;
+    }
+
+
 }

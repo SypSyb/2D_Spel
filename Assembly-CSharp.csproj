@@ -358,8 +358,10 @@
     <Compile Include="Assets\Camera Filter Pack\Scripts\CameraFilterPack_Vision_Tunnel.cs" />
     <Compile Include="Assets\Camera Filter Pack\Scripts\CameraFilterPack_Vision_Warp.cs" />
     <Compile Include="Assets\Camera Filter Pack\Scripts\CameraFilterPack_Vision_Warp2.cs" />
+    <Compile Include="Assets\MenuButton.cs" />
     <Compile Include="Assets\Move.cs" />
     <Compile Include="Assets\Scripts\CRTEffect.cs" />
+    <Compile Include="Assets\Scripts\TargetMovementVertical.cs" />
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_Blend2Camera_SplitScreen3D.shader" />
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_Pixelisation_Sweater.shader" />
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_TV_Chromatical.shader" />
@@ -401,6 +403,7 @@
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_EyesVision_1.shader" />
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_Gradients_Ansi.shader" />
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_TV_Artefact.shader" />
+    <None Include="Assets\Fonts\Text.shader" />
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_TV_Horror.shader" />
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_TV_Old_Movie_2.shader" />
     <None Include="Assets\Camera Filter Pack\Resources\CameraFilterPack_3D_Inverse.shader" />
