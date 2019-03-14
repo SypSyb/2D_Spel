@@ -6,6 +6,7 @@ public class TargetMovementVertical : MonoBehaviour
     public int maxSpeed;
     public int maxLength;
     public float maxHeight;
+    public GameObject particle;
 
     private Vector3 startPosition;
 
@@ -32,14 +33,15 @@ public class TargetMovementVertical : MonoBehaviour
         if (transform.position.x > 3)
         {
             maxSpeed = -3;
-            transform.localScale = new Vector3(5.15f, 5.15f, 5.15f);
+            particle.transform.rotation = Quaternion.Euler(0, 0, 0);
 
 
         }
        else if (transform.position.x < -3)
         {
             maxSpeed = 3;
-            transform.localScale = new Vector3(-5.15f, 5.15f, 5.15f);
+            particle.transform.rotation = Quaternion.Euler(0, 180, 0);
+
         }
 
 

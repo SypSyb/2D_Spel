@@ -34,12 +34,22 @@ public class MenuButton : MonoBehaviour
     {
         if(Input.GetButton("CircleButton") || Input.GetButton("SquareButton") || Input.GetButton("CrossButton") || Input.GetButton("TriangleButton") || Input.GetButton("Jump" ))
         {
-            SceneManager.LoadScene(1);
+            if(isStart == true)
+            {
+                SceneManager.LoadScene(1);
+            }
+            
         }
 
-        if (Input.GetButton("Jump") && isMenu == true)
+
+    }
+
+    public void Play()
+    {
+        if(isMenu == true)
         {
             SceneManager.LoadScene(2);
         }
+        
     }
 }
