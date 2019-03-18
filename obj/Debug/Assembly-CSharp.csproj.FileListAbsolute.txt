@@ -1,0 +1,2 @@
+C:\Users\sluit\source\repos\2D_Spel\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\sluit\source\repos\2D_Spel\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+
+    public AudioSource explosionSound;
+
     // Start is called before the first frame update
     void Awake()
     {
+        explosionSound.Play();
         StartCoroutine(ExplosionDestroy());
     }
 
