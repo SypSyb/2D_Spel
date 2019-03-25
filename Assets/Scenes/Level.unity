@@ -727,7 +727,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1439305198 stripped
 GameObject:
@@ -1327,6 +1327,8 @@ MonoBehaviour:
     type: 3}
   Heavybullet: {fileID: 473825304877704694, guid: c093d954fd67f2e49971feadfc3974ef,
     type: 3}
+  index: 1
+  bulletChoose: 0
   Clips: {fileID: 1884945817}
 --- !u!82 &1884945817
 AudioSource:
@@ -2232,7 +2234,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 2.71
+      value: 4
       mode: 0
       spread: 0
       speed:
@@ -2291,7 +2293,7 @@ ParticleSystem:
     arc:
       value: 7.73
       mode: 0
-      spread: 0
+      spread: 1
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -6346,7 +6348,7 @@ PrefabInstance:
     - target: {fileID: 3342009888942487723, guid: e3d9597f66f7580428207ff07848957d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3342009888942487723, guid: e3d9597f66f7580428207ff07848957d,
         type: 3}

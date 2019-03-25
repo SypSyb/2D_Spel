@@ -13,8 +13,8 @@ public class GunScript : MonoBehaviour
     public BulletScript Heavybullet;
     bool canShoot = true;
 
-    int index = 1;
-    int bulletChoose;
+   public int index = 1;
+    public int bulletChoose;
 
 
     public AudioSource Clips;
