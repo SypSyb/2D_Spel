@@ -10,15 +10,18 @@ public class MenuButton : MonoBehaviour
     public bool isStart;
     public bool isMenu;
     public Text ding = null;
+    public GameObject fade;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(isStart == true)
+        
+        if (isStart == true)
         {
             StartCoroutine(Button());
         }
-       
+        fade.gameObject.SetActive(false);
     }
 
     public IEnumerator Button()
@@ -48,8 +51,16 @@ public class MenuButton : MonoBehaviour
     {
         if(isMenu == true)
         {
-            SceneManager.LoadScene(2);
+            StartCoroutine(Fade());
         }
         
+    }
+
+    public IEnumerator Fade()
+    {
+        canvas.SetActive(false);
+        fade.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(2);
     }
 }

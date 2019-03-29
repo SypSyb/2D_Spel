@@ -119,6 +119,7 @@ MonoBehaviour:
   shootingSound: {fileID: 1389297913}
   explosion: {fileID: 8138310646910728016, guid: 4b3f345fd46d29d43bc5a51daae32205,
     type: 3}
+  enemy: {fileID: 3458479916086263077, guid: 39b261b68b07fbe4b876449ca71c5615, type: 3}
   enemyObject: {fileID: 0}
 --- !u!61 &8175091917040358084
 BoxCollider2D:

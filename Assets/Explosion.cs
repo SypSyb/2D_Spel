@@ -20,6 +20,16 @@ public class Explosion : MonoBehaviour
         
     }
 
+    public void ChangePitchToHalf()
+    {
+        explosionSound.pitch = .3f;
+    }
+
+    public void ChangePitchToFull()
+    {
+        explosionSound.pitch = 1;
+    }
+
     public IEnumerator ExplosionDestroy()
     {
         yield return new WaitForSeconds(0.6f);

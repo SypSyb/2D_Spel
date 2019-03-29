@@ -25,11 +25,16 @@ public class Move : MonoBehaviour {
     public float dieSpeed;
     public GameObject dieScreen;
     public GunScript gunScript;
+    public Explosion explosionScript;
     public GameObject shootingPoint;
+    public GameObject eventSystem;
+    public GameObject eventSystemDead;
     bool isDead;
 
     void Start () {
-		rb = GetComponent <Rigidbody2D> ();
+        eventSystemDead.SetActive(false);
+        eventSystem.SetActive(true);
+        rb = GetComponent <Rigidbody2D> ();
         canDamaged = true;
         dieScreen.SetActive(false);
         gunScript = hand.GetComponent<GunScript>();
@@ -122,17 +127,21 @@ public class Move : MonoBehaviour {
             hand.SetActive(false);
             dieScreen.SetActive(true);
             isDead = true;
+            eventSystem.SetActive(false);
+            eventSystemDead.SetActive(true);
         }
 
         if(Input.GetButton("LeftJoystickPress") && isDead == false)
         {
             Time.timeScale = 0.3f;
             gunScript.ChangePitchToHalf();
+            explosionScript.ChangePitchToHalf();
         }
         else
         {
             Time.timeScale = 1f;
             gunScript.ChangePitchToFull();
+            explosionScript.ChangePitchToFull();
         }
 
 	}

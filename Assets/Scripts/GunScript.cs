@@ -15,13 +15,13 @@ public class GunScript : MonoBehaviour
 
    public int index = 1;
     public int bulletChoose;
-
+    public bool canChoose;
 
     public AudioSource Clips;
 
     private void Awake()
     {
-
+        
     }
 
 
@@ -30,7 +30,7 @@ public class GunScript : MonoBehaviour
     public void Update()
     { 
 
-         if(Input.GetButtonDown("TriangleButton"))
+         if(Input.GetButtonDown("TriangleButton") && canChoose == true)
         {
             index++;
             if(index == 4)
@@ -58,12 +58,12 @@ public class GunScript : MonoBehaviour
 
     public void ChangePitchToHalf()
     {
-        bullet.shootingSound.pitch = .3f;
+        Clips.pitch = .3f;
     }
 
     public void ChangePitchToFull()
     {
-        bullet.shootingSound.pitch = 1;
+        Clips.pitch = 1;
     }
 
     public IEnumerator Shooting()

@@ -359,8 +359,10 @@
     <Compile Include="Assets\Camera Filter Pack\Scripts\CameraFilterPack_Vision_Tunnel.cs" />
     <Compile Include="Assets\Camera Filter Pack\Scripts\CameraFilterPack_Vision_Warp.cs" />
     <Compile Include="Assets\Camera Filter Pack\Scripts\CameraFilterPack_Vision_Warp2.cs" />
+    <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\Scripts\AirPlaneMove.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow2D.cs" />
     <Compile Include="Assets\Scripts\coinScript.cs" />
     <Compile Include="Assets\Scripts\CRTEffect.cs" />
     <Compile Include="Assets\Scripts\GunScript.cs" />

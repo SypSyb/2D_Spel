@@ -8,10 +8,10 @@ public class BulletScript : MonoBehaviour
     public float speed;
     public AudioSource shootingSound;
     public GameObject explosion;
+    public Enemy enemy;
 
 
-
-    public GameObject enemyObject;
+    public GameObject enemyObject = null;
     private float distance;
     private float minimumDistance = 20f;
 
@@ -33,7 +33,7 @@ public class BulletScript : MonoBehaviour
             StartCoroutine(Destroy());
         }
 
-        enemyObject = GameObject.FindWithTag("Enemy");
+        
 
     }
 
@@ -48,12 +48,26 @@ public class BulletScript : MonoBehaviour
         
         if (this.gameObject.tag == "TraceBullet")
         {
+            enemyObject = GameObject.FindWithTag("Enemy");
             float step = speed * Time.deltaTime;
 
-            
+
+            Vector3 vectorToTarget = enemyObject.transform.position - transform.position;
+            float moveDistance = speed * Time.deltaTime;
+            if (vectorToTarget.magnitude > moveDistance)
+            {
+                transform.position += vectorToTarget.normalized * moveDistance;
+            }
+            else
+            {
+                transform.position = enemyObject.transform.position;
+            }
+
+
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(enemyObject.transform.position - transform.position), 10 * Time.deltaTime).normalized;
 
             transform.Translate(Vector3.right * speed * Time.deltaTime);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(enemyObject.transform.position - transform.position), 10 * Time.deltaTime).normalized;
             transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
 
             Debug.DrawRay(transform.position, enemyObject.transform.position - transform.position);
@@ -63,6 +77,10 @@ public class BulletScript : MonoBehaviour
                 
             
 
+        }
+        else
+        {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
 
         
@@ -95,6 +113,7 @@ public class BulletScript : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
+            enemy.Damage();
             Instantiate(explosion, this.transform.position, this.transform.rotation);
            Destroy(this.gameObject);
         }
