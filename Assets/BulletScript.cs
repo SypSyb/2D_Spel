@@ -26,7 +26,7 @@ public class BulletScript : MonoBehaviour
         }
         else if(this.gameObject.tag == "HeavyBullet")
         {
-            StartCoroutine(DestroyHeavy());
+           StartCoroutine(DestroyHeavy());
         }
         else
         {

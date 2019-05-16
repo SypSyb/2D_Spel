@@ -3,10 +3,13 @@
 public class CameraFollow2D : MonoBehaviour
 {
     public float FollowSpeed = 2f;
-    public Transform Target;
+    Transform Target;
 
     private void Update()
     {
+
+        Target = GameObject.FindObjectOfType<Move>().transform;
+
         Vector3 newPosition = Target.position;
         newPosition.z = -10;
         transform.position = Vector3.Slerp(transform.position, newPosition, FollowSpeed * Time.deltaTime);

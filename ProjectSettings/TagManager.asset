@@ -12,6 +12,8 @@ TagManager:
   - Coin
   - TraceBullet
   - HeavyBullet
+  - Portal
+  - BeginPortal
   layers:
   - Default
   - TransparentFX

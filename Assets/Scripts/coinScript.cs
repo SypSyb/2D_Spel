@@ -7,6 +7,11 @@ public class coinScript : MonoBehaviour
 
     public Move moveScript;
 
+    private void Start()
+    {
+        moveScript = GameObject.FindObjectOfType<Move>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")

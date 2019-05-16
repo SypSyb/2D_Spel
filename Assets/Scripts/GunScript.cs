@@ -19,6 +19,8 @@ public class GunScript : MonoBehaviour
 
     public AudioSource Clips;
 
+    
+
     private void Awake()
     {
         
@@ -80,9 +82,9 @@ public class GunScript : MonoBehaviour
                 Instantiate(traceBullet, shootingPoint.position, shootingPoint.rotation);
                 break;
             case 3:
-                Instantiate(Heavybullet, shootingPoint.position, Quaternion.Euler(transform.rotation.x, transform.rotation.y, 22.5f));
+                Instantiate(Heavybullet, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(0, 0, 22.5f));
                 Instantiate(Heavybullet, shootingPoint.position, shootingPoint.rotation);
-                Instantiate(Heavybullet, shootingPoint.position, Quaternion.Euler(transform.rotation.x, transform.rotation.y, -22.5f));
+                Instantiate(Heavybullet, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(0, 0, -22.5f));
                 break;
 
 
